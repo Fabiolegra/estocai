@@ -7,3 +7,5 @@ Crie o design da página de Cadastro de Usuário com uma abordagem mobile-first.
 2 - Autenticação de Usuários
 2.1
 Implemente a funcionalidade de login de usuário. O sistema deve validar e-mail e senha. Em caso de sucesso, crie uma sessão para o usuário e redirecione-o para o dashboard. Em caso de falha, exiba uma mensagem de erro na página de login.
+2.2
+Desenvolva a interface da página de Login, seguindo o princípio mobile-first. O formulário deve ser simples e centrado, contendo campos para `e-mail` e `senha`, e um botão de 'Entrar' bem destacado. Adicione um link para a página de cadastro. Mensagens de erro devem aparecer próximas aos campos ou em um alerta visível, usando a cor vermelha para indicar falha.
