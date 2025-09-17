@@ -1,0 +1,60 @@
+CREATE DATABASE IF NOT EXISTS estocaidb
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_general_ci;
+
+USE estocaidb;
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+CREATE TABLE IF NOT EXISTS categorias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL UNIQUE,
+    descricao TEXT DEFAULT NULL,
+    criado_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS fornecedores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(150) NOT NULL,
+    contato VARCHAR(150) DEFAULT NULL,
+    email VARCHAR(150) DEFAULT NULL,
+    telefone VARCHAR(50) DEFAULT NULL,
+    criado_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    papel VARCHAR(50) DEFAULT 'usuario',
+    criado_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    descricao TEXT DEFAULT NULL,
+    categoria_id INT DEFAULT NULL,
+    fornecedor_id INT DEFAULT NULL,
+    quantidade INT NOT NULL DEFAULT 0,
+    quantidade_minima INT NOT NULL DEFAULT 0,
+    preco DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+    criado_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    atualizado_at TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_nome (nome),
+    INDEX idx_categoria (categoria_id),
+    INDEX idx_fornecedor (fornecedor_id),
+    CONSTRAINT fk_produtos_categoria FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON DELETE SET NULL,
+    CONSTRAINT fk_produtos_fornecedor FOREIGN KEY (fornecedor_id) REFERENCES fornecedores(id) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS movimentos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    produto_id INT NOT NULL,
+    tipo ENUM('entrada','saida') NOT NULL,
+    quantidade INT NOT NULL,
+    observacao TEXT DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_movimentos_produto FOREIGN KEY (produto_id) REFERENCES produtos(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
