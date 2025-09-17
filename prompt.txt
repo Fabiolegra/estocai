@@ -1,6 +1,9 @@
-1 -
+1 - Cadastro de Usuário
+1.1 -
 Implemente o módulo de Cadastro de usuários. O sistema deve permitir que novos usuários se cadastrem informando nome, e-mail e senha. O e-mail deve ser único no banco de dados. As senhas devem ser armazenadas de forma segura usando password_hash. Após o cadastro, o usuário deve ser redirecionado para a página de login
-
-
-2 -
+1.2 -
 Crie o design da página de Cadastro de Usuário com uma abordagem mobile-first. O formulário deve ser vertical, com campos de nome, e-mail e senha ocupando a largura total em telas pequenas. Use placeholders claros e labels visíveis. 
+
+2 - Autenticação de Usuários
+2.1
+Implemente a funcionalidade de login de usuário. O sistema deve validar e-mail e senha. Em caso de sucesso, crie uma sessão para o usuário e redirecione-o para o dashboard. Em caso de falha, exiba uma mensagem de erro na página de login.
