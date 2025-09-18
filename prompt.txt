@@ -20,3 +20,9 @@ Projete o Dashboard com uma abordagem mobile-first. Em telas pequenas, os cards 
 4.1 - 
 Desenvolva a funcionalidade de cadastro de novos produtos. Crie um formulário que colete nome, descrição, quantidade, quantidade mínima e preço. Implemente a lógica no backend para salvar esses dados no banco de dados, com validação dos campos obrigatórios.
 
+5 -Listar Produtos
+5.1 - 
+Crie uma página que liste todos os produtos cadastrados em uma tabela. A tabela deve exibir colunas para ID, nome, quantidade, preço e ações (editar/excluir). Esta página deve ser acessível apenas para usuários autenticados
+
+6 -
+

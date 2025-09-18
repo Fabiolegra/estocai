@@ -1,0 +1,95 @@
+/* Estilos para a página de listagem de produtos */
+
+.page-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.page-header h2 {
+    margin: 0;
+}
+
+.table-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+thead th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Estilo para linha de produto com estoque crítico */
+.row-critical {
+    background-color: #f8d7da !important;
+    color: #721c24;
+}
+
+.row-critical a {
+    color: #721c24;
+}
+
+td.actions {
+    display: flex;
+    gap: 0.5rem;
+    white-space: nowrap;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Alertas (reutilizados de auth.css, mas garantindo que funcionem aqui) */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
