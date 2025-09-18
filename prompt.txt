@@ -25,4 +25,7 @@ Desenvolva a funcionalidade de cadastro de novos produtos. Crie um formulário q
 Crie uma página que liste todos os produtos cadastrados em uma tabela. A tabela deve exibir colunas para ID, nome, quantidade, preço e ações (editar/excluir). Esta página deve ser acessível apenas para usuários autenticados
 
 6 -
-
+6.1 -
+Implemente a funcionalidade de edição de produtos. A partir da listagem, o usuário deve poder clicar em 'Editar' para abrir um formulário pré-preenchido com os dados do produto. Após salvar as alterações, o usuário deve ser redirecionado de volta para a listagem ou dashboard
+6.2 
+O design do formulário de 'Editar Produto' e 'Cadastrar Produto'devem seguir a abordagem mobile-first

@@ -34,6 +34,7 @@ try {
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboard.css"> <!-- Reutiliza estilos do header -->
     <link rel="stylesheet" href="css/products.css"> <!-- Estilos específicos da página -->
+    <link rel="stylesheet" href="css/responsive-table.css">
 </head>
 <body>
     <div class="header">
@@ -65,39 +66,31 @@ try {
         }
         ?>
 
-        <div class="table-container">
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Quantidade</th>
-                            <th>Preço (R$)</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php if (empty($produtos)): ?>
-                            <tr>
-                                <td colspan="5" class="text-center">Nenhum produto cadastrado.</td>
-                            </tr>
-                        <?php else: ?>
-                            <?php foreach ($produtos as $produto): ?>
-                                <tr class="<?php echo ($produto['quantidade'] <= $produto['quantidade_minima']) ? 'row-critical' : ''; ?>">
-                                    <td><?php echo htmlspecialchars($produto['id']); ?></td>
-                                    <td><?php echo htmlspecialchars($produto['nome']); ?></td>
-                                    <td><?php echo htmlspecialchars($produto['quantidade']); ?></td>
-                                    <td><?php echo number_format($produto['preco'], 2, ',', '.'); ?></td>
-                                    <td class="actions">
-                                        <a href="product_edit.php?id=<?php echo $produto['id']; ?>" class="btn btn-sm btn-warning">Editar</a>
-                                        <a href="product_delete.php?id=<?php echo $produto['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir este produto?');">Excluir</a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    </tbody>
-                </table>
+        <div class="product-grid-container">
+            <div class="product-grid-header">
+                <div>ID</div>
+                <div>Nome</div>
+                <div>Quantidade</div>
+                <div>Preço (R$)</div>
+                <div>Ações</div>
+            </div>
+            <div class="product-grid-body">
+                <?php if (empty($produtos)): ?>
+                    <div class="empty-state">Nenhum produto cadastrado.</div>
+                <?php else: ?>
+                    <?php foreach ($produtos as $produto): ?>
+                        <div class="product-card <?php echo ($produto['quantidade'] <= $produto['quantidade_minima']) ? 'row-critical' : ''; ?>">
+                            <div class="card-item" data-label="ID"><?php echo htmlspecialchars($produto['id']); ?></div>
+                            <div class="card-item" data-label="Nome"><?php echo htmlspecialchars($produto['nome']); ?></div>
+                            <div class="card-item" data-label="Quantidade"><?php echo htmlspecialchars($produto['quantidade']); ?></div>
+                            <div class="card-item" data-label="Preço (R$)"><?php echo number_format($produto['preco'], 2, ',', '.'); ?></div>
+                            <div class="card-item actions" data-label="Ações">
+                                <a href="product_edit.php?id=<?php echo $produto['id']; ?>" class="btn btn-sm btn-warning">Editar</a>
+                                <a href="product_delete.php?id=<?php echo $produto['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir este produto?');">Excluir</a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>

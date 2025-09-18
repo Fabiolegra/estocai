@@ -13,38 +13,26 @@
     margin: 0;
 }
 
-.table-container {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+/* Mobile-first: Container for header buttons */
+.page-header > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%; /* On small screens, the container takes full width */
 }
 
-.table-responsive {
-    overflow-x: auto;
-}
-
-table {
+/* Make buttons inside the header full-width on mobile */
+.page-header .btn {
     width: 100%;
-    min-width: 700px;
-    border-collapse: collapse;
+    box-sizing: border-box;
 }
 
-th, td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #e9ecef;
-    vertical-align: middle;
-}
-
-thead th {
-    background-color: #f8f9fa;
-    font-weight: 600;
-}
-
-tbody tr:hover {
-    background-color: #f8f9fa;
+/* On larger screens, revert to default behavior */
+@media (min-width: 576px) {
+    .page-header > div {
+        flex-direction: row;
+        width: auto;
+    }
 }
 
 /* Estilo para linha de produto com estoque crítico */
@@ -57,8 +45,8 @@ tbody tr:hover {
     color: #721c24;
 }
 
-td.actions {
-    display: flex;
+.card-item.actions {
+    display: flex; /* This is inside a card-item now */
     gap: 0.5rem;
     white-space: nowrap;
 }
@@ -92,4 +80,12 @@ td.actions {
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
+}
+
+/* Grid column definition for desktop */
+@media (min-width: 768px) {
+    .product-grid-container .product-grid-header,
+    .product-grid-container .product-card {
+        grid-template-columns: 0.5fr 3fr 1fr 1fr 1.5fr;
+    }
 }

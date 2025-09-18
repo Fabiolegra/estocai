@@ -1,0 +1,115 @@
+/* === RESPONSIVE GRID LIST === */
+
+/* Mobile-first: Stacked cards */
+.product-grid-header {
+    display: none; /* Hide header on mobile */
+}
+
+.product-grid-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.product-card {
+    display: block;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.product-card .card-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f1f3f5;
+}
+
+.product-card .card-item:last-child {
+    border-bottom: none;
+}
+
+/* Use pseudo-element to show the label from data-label attribute */
+.product-card .card-item::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #495057;
+    padding-right: 1rem;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #6c757d;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+}
+
+/* Desktop view: Grid layout */
+@media (min-width: 768px) {
+    .product-grid-container {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .product-grid-header,
+    .product-card {
+        display: grid;
+        gap: 1rem;
+        align-items: center;
+        padding: 1rem 1.25rem;
+    }
+
+    .product-grid-header {
+        background-color: #f8f9fa;
+        font-weight: 600;
+        color: #495057;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .product-grid-body {
+        display: block; /* Revert flex */
+        gap: 0;
+    }
+
+    .product-card {
+        border: none;
+        border-radius: 0;
+        margin-bottom: 0;
+        box-shadow: none;
+        border-bottom: 1px solid #e9ecef;
+    }
+    
+    .product-grid-body .product-card:last-child {
+        border-bottom: none;
+    }
+
+    .product-grid-body .product-card:hover {
+        background-color: #f1f3f5;
+    }
+
+    .card-item {
+        display: block; /* Revert from flex */
+        padding: 0;
+        border: none;
+    }
+
+    .card-item::before {
+        display: none; /* Hide the data-label pseudo-element */
+    }
+
+    .empty-state {
+        background-color: transparent;
+        border: none;
+    }
+}

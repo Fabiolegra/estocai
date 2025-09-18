@@ -22,6 +22,7 @@ require_once "model/dashboard_data.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive-table.css">
 </head>
 <body>
     <div class="header">
@@ -68,36 +69,29 @@ require_once "model/dashboard_data.php";
         </div>
         <div class="recent-products-container">
             <h2>Produtos Adicionados Recentemente</h2>
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Qtd.</th>
-                            <th>Preço (R$)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php if (empty($produtos_recentes)): ?>
-                            <tr>
-                                <td colspan="4" style="text-align: center;">Nenhum produto encontrado.</td>
-                            </tr>
-                        <?php else: ?>
-                            <?php foreach ($produtos_recentes as $produto): ?>
-                                <tr>
-                                    <td><?php echo htmlspecialchars($produto['id']); ?></td>
-                                    <td><?php echo htmlspecialchars($produto['nome']); ?></td>
-                                    <td><?php echo htmlspecialchars($produto['quantidade']); ?></td>
-                                    <td><?php echo number_format($produto['preco'], 2, ',', '.'); ?></td>
-                                </tr>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    </tbody>
-                </table>
+            <div class="product-grid-container">
+                <div class="product-grid-header">
+                    <div>ID</div>
+                    <div>Nome</div>
+                    <div>Qtd.</div>
+                    <div>Preço (R$)</div>
+                </div>
+                <div class="product-grid-body">
+                    <?php if (empty($produtos_recentes)): ?>
+                        <div class="empty-state">Nenhum produto encontrado.</div>
+                    <?php else: ?>
+                        <?php foreach ($produtos_recentes as $produto): ?>
+                            <div class="product-card">
+                                <div class="card-item" data-label="ID"><?php echo htmlspecialchars($produto['id']); ?></div>
+                                <div class="card-item" data-label="Nome"><?php echo htmlspecialchars($produto['nome']); ?></div>
+                                <div class="card-item" data-label="Qtd."><?php echo htmlspecialchars($produto['quantidade']); ?></div>
+                                <div class="card-item" data-label="Preço (R$)"><?php echo number_format($produto['preco'], 2, ',', '.'); ?></div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
-
 
     </div>
 </body>

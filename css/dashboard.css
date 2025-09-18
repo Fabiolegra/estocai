@@ -104,4 +104,9 @@ tbody tr:last-of-type td { border-bottom: 0; }
     .stat-card {
         flex: 1; /* Faz com que os cards ocupem o espaço disponível igualmente */
     }
+
+    .recent-products-container .product-grid-header,
+    .recent-products-container .product-card {
+        grid-template-columns: 0.5fr 3fr 1fr 1fr;
+    }
 }
