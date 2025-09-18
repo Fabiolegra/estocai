@@ -16,3 +16,7 @@ Crie a página do dashboard para usuários autenticados. Esta página deve apres
 3.2 -
 Projete o Dashboard com uma abordagem mobile-first. Em telas pequenas, os cards de estatísticas (total de produtos, estoque crítico, etc.) devem ser empilhados verticalmente. Em telas maiores, eles podem ser organizados em uma grade. Use cores para destacar os status: vermelho para 'críticos', amarelo para 'estoque baixo'. A tabela de produtos recentes deve ser horizontalmente rolável em mobile para não quebrar o layout
 
+4 - Cadastrar produtos
+4.1 - 
+Desenvolva a funcionalidade de cadastro de novos produtos. Crie um formulário que colete nome, descrição, quantidade, quantidade mínima e preço. Implemente a lógica no backend para salvar esses dados no banco de dados, com validação dos campos obrigatórios.
+
