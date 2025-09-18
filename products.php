@@ -84,7 +84,7 @@ try {
                     <div class="empty-state">Nenhum produto cadastrado.</div>
                 <?php else: ?>
                     <?php foreach ($produtos as $produto): ?>
-                        <div class="product-card <?php echo ($produto['quantidade'] <= $produto['quantidade_minima']) ? 'row-critical' : ''; ?>">
+                        <div class="product-card <?php echo (isset($produto['quantidade_minima']) && $produto['quantidade'] <= $produto['quantidade_minima']) ? 'row-critical' : ''; ?>">
                             <div class="card-item" data-label="ID"><?php echo htmlspecialchars($produto['id']); ?></div>
                             <div class="card-item" data-label="Nome"><?php echo htmlspecialchars($produto['nome']); ?></div>
                             <div class="card-item" data-label="Quantidade"><?php echo htmlspecialchars($produto['quantidade']); ?></div>

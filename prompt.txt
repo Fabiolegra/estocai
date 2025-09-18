@@ -31,3 +31,9 @@ Implemente a funcionalidade de edição de produtos. A partir da listagem, o usu
 O design do formulário de 'Editar Produto' e 'Cadastrar Produto'devem seguir a abordagem mobile-first
 
 7 - Excluir Produto
+7.1 -
+Implemente a funcionalidade de exclusão de produtos
+
+8 - dashboard
+8.1 - 
+No dashboard, exiba no máximo 3 produtos recentes, utilizando o mesmo layout da página listaProdutos, mostrando todas as informações disponíveis de cada produto 

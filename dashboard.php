@@ -75,23 +75,29 @@ require_once "model/dashboard_data.php";
                     <div>Nome</div>
                     <div>Qtd.</div>
                     <div>Preço (R$)</div>
+                    <div>Ações</div>
                 </div>
                 <div class="product-grid-body">
                     <?php if (empty($produtos_recentes)): ?>
                         <div class="empty-state">Nenhum produto encontrado.</div>
                     <?php else: ?>
                         <?php foreach ($produtos_recentes as $produto): ?>
-                            <div class="product-card">
+                            <div class="product-card <?php echo (isset($produto['quantidade_minima']) && $produto['quantidade'] <= $produto['quantidade_minima']) ? 'row-critical' : ''; ?>">
                                 <div class="card-item" data-label="ID"><?php echo htmlspecialchars($produto['id']); ?></div>
                                 <div class="card-item" data-label="Nome"><?php echo htmlspecialchars($produto['nome']); ?></div>
                                 <div class="card-item" data-label="Qtd."><?php echo htmlspecialchars($produto['quantidade']); ?></div>
                                 <div class="card-item" data-label="Preço (R$)"><?php echo number_format($produto['preco'], 2, ',', '.'); ?></div>
+                                <div class="card-item actions" data-label="Ações">
+                                    <a href="product_edit.php?id=<?php echo $produto['id']; ?>" class="btn btn-sm btn-warning">Editar</a>
+                                    <a href="product_delete.php?id=<?php echo $produto['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir este produto?');">Excluir</a>
+                                </div>
                             </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </div>
             </div>
         </div>
+
 
     </div>
 </body>

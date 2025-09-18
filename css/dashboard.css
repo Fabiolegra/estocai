@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 /* Reset de estilos do style.css para um layout de página inteira */
 body {
+    font-family: 'Poppins', sans-serif;
     display: block;
     justify-content: normal;
     align-items: normal;
@@ -71,30 +74,36 @@ body {
     margin: 0.5rem;
 }
 
+/* Estilo para linha de produto com estoque crítico (usado no grid) */
+.row-critical {
+    background-color: #f8d7da !important;
+    color: #721c24;
+}
+
+.row-critical a {
+    color: #721c24;
+}
+
+.card-item.actions {
+    display: flex;
+    gap: 0.5rem;
+    white-space: nowrap;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.2rem;
+}
+
 /* Tabela de produtos recentes */
 .recent-products-container {
     margin-top: 2rem;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
 }
-.recent-products-container h2 { text-align: left; }
-.table-responsive {
-    overflow-x: auto; /* Permite rolagem horizontal em telas pequenas */
-}
-table {
-    width: 100%;
-    min-width: 600px; /* Força a rolagem em telas menores que 600px */
-    border-collapse: collapse;
-}
-th, td {
-    padding: 12px 15px;
+.recent-products-container h2 {
     text-align: left;
-    border-bottom: 1px solid #e9ecef;
+    margin: 0 0 10px 0;
 }
-thead th { background-color: #f8f9fa; }
-tbody tr:last-of-type td { border-bottom: 0; }
 
 /* Media Query para telas maiores (tablets e desktops) */
 @media (min-width: 768px) {
@@ -107,6 +116,6 @@ tbody tr:last-of-type td { border-bottom: 0; }
 
     .recent-products-container .product-grid-header,
     .recent-products-container .product-card {
-        grid-template-columns: 0.5fr 3fr 1fr 1fr;
+        grid-template-columns: 0.5fr 3fr 1fr 1fr 1.5fr;
     }
 }
