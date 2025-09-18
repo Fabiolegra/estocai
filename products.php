@@ -60,6 +60,11 @@ try {
             echo '<div class="alert alert-success">' . htmlspecialchars($_SESSION['message']) . '</div>';
             unset($_SESSION['message']); // Limpa a mensagem da sessão
         }
+        // Exibe a mensagem de erro, se houver
+        if(isset($_SESSION['message_error'])){
+            echo '<div class="alert alert-danger">' . htmlspecialchars($_SESSION['message_error']) . '</div>';
+            unset($_SESSION['message_error']); // Limpa a mensagem da sessão
+        }
         // Exibe mensagem de erro na busca
         if(isset($error_message)){
             echo '<div class="alert alert-danger">' . htmlspecialchars($error_message) . '</div>';
