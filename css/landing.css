@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #007bff, #17a2b8);
+    color: #fff;
+    text-align: center;
+}
+
+.landing-container {
+    max-width: 90%;
+    width: 600px;
+    padding: 2rem;
+}
+
+.brand-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tagline {
+    font-size: 1.25rem;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-top: 0;
+}
+
+.landing-content p {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.landing-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px; /* Pill shape */
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 200px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: #fff;
+    color: #007bff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+/* Responsive for larger screens */
+@media (min-width: 576px) {
+    .landing-actions {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .brand-title {
+        font-size: 5rem;
+    }
+}

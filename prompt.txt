@@ -45,3 +45,8 @@ Adicione uma funcionalidade de pesquisa na página de listagem de produtos. O us
 10 - Movimentaçao
 10.1 - 
 Crie um módulo de movimentação de estoque. Acesse a tabela 'movimentos' no banco de dados (produto_id, tipo, quantidade, data). Desenvolva a interface para registrar entradas e saídas de produtos, atualizando a quantidade total na tabela 'produtos' e registrando cada operação na tabela 'movimentos'
+
+11 - Pagina Inicial
+crie uma landing page (index.php) com botao de login e cadastro de usuario para a pagina
+
+12 - 
