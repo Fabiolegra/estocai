@@ -1,0 +1,18 @@
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.wrapper hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 1rem 0;
+}

@@ -66,6 +66,7 @@ require_once "model/dashboard_data.php";
             <h2>Ações Rápidas</h2>
             <a href="products.php" class="btn btn-secondary">Listar Produtos</a>
             <a href="product_create.php" class="btn btn-primary">Cadastrar Novo Produto</a>
+            <a href="movements.php" class="btn btn-info">Ver Histórico de Movimentações</a>
         </div>
         <div class="recent-products-container">
             <h2>Produtos Adicionados Recentemente</h2>
@@ -89,6 +90,7 @@ require_once "model/dashboard_data.php";
                                 <div class="card-item" data-label="Preço (R$)"><?php echo number_format($produto['preco'], 2, ',', '.'); ?></div>
                                 <div class="card-item actions" data-label="Ações">
                                     <a href="product_edit.php?id=<?php echo $produto['id']; ?>" class="btn btn-sm btn-warning">Editar</a>
+                                    <a href="product_movement.php?id=<?php echo $produto['id']; ?>" class="btn btn-sm btn-info">Movimentar</a>
                                     <a href="product_delete.php?id=<?php echo $produto['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir este produto?');">Excluir</a>
                                 </div>
                             </div>

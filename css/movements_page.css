@@ -1,0 +1,75 @@
+/* Grid container for movements, similar to products */
+.movement-grid-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Header for the grid */
+.movement-grid-header {
+    display: none; /* Hide on mobile */
+    font-weight: bold;
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    padding: 10px 15px;
+}
+
+/* Individual movement card */
+.movement-card {
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 768px) {
+    .movement-grid-header {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.5fr 2fr;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .movement-card {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.5fr 2fr;
+        gap: 1rem;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 15px;
+        margin-bottom: 0;
+        border-radius: 0;
+        border-top: none;
+    }
+
+    .movement-grid-body .movement-card:nth-child(odd) {
+        background-color: #f8f9fa;
+    }
+}
+
+/* Badges for movement type */
+.badge {
+    display: inline-block;
+    padding: .35em .65em;
+    font-size: .75em;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+
+.badge-success {
+    color: #fff;
+    background-color: #28a745; /* Verde para entrada */
+}
+
+.badge-warning {
+    color: #212529;
+    background-color: #ffc107; /* Amarelo para saída */
+}

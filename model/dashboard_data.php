@@ -32,7 +32,7 @@ try {
     $total_itens_estoque = $stmt_total_itens->fetch(PDO::FETCH_ASSOC)['total_itens'] ?? 0;
 
     // Consulta para obter os últimos 5 produtos adicionados
-    $sql_produtos_recentes = "SELECT id, nome, quantidade, preco FROM produtos ORDER BY criado_at DESC LIMIT 5";
+    $sql_produtos_recentes = "SELECT id, nome, quantidade, quantidade_minima, preco FROM produtos ORDER BY criado_at DESC LIMIT 3";
     $stmt_produtos_recentes = $pdo->query($sql_produtos_recentes);
     $produtos_recentes = $stmt_produtos_recentes->fetchAll(PDO::FETCH_ASSOC);
 
@@ -41,4 +41,3 @@ try {
     // Para este exemplo, as variáveis manterão seus valores padrão (0) em caso de falha.
 }
 ?>
-

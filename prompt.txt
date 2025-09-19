@@ -41,3 +41,7 @@ No dashboard, exiba no máximo 3 produtos recentes, utilizando o mesmo layout da
 9 - Busca de Produtos
 9.1 - 
 Adicione uma funcionalidade de pesquisa na página de listagem de produtos. O usuário deve poder buscar produtos pelo nome. 
+
+10 - Movimentaçao
+10.1 - 
+Crie um módulo de movimentação de estoque. Acesse a tabela 'movimentos' no banco de dados (produto_id, tipo, quantidade, data). Desenvolva a interface para registrar entradas e saídas de produtos, atualizando a quantidade total na tabela 'produtos' e registrando cada operação na tabela 'movimentos'
