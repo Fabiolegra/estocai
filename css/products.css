@@ -35,6 +35,43 @@
     }
 }
 
+/* Search Form */
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.search-input-group .form-control {
+    /* Remove border-radius on the right side to join with the button */
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-input-group .btn-primary {
+    /* Remove border-radius on the left side */
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    /* Fix for a small gap that can appear on some browsers */
+    margin-left: -1px;
+    /* Override any generic width: 100% to allow the button to size to its content */
+    width: auto;
+    /* Center the icon inside the button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px; /* Adjust padding for a better look with just an icon */
+}
+
+@media (max-width: 575px) {
+    .search-input-group,
+    .search-form .btn-secondary {
+        flex-basis: 100%; /* Each element takes full width on its own line */
+    }
+}
+
 /* Estilo para linha de produto com estoque crítico */
 .row-critical {
     background-color: #f8d7da !important;

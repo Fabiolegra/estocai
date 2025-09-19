@@ -11,18 +11,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 // Inclui o arquivo de configuração
 require_once "config.php";
 
-// Busca todos os produtos do banco de dados
-$produtos = [];
-try {
-    $sql = "SELECT id, nome, quantidade, quantidade_minima, preco FROM produtos ORDER BY nome ASC";
-    $stmt = $pdo->query($sql);
-    $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    // Em um ambiente de produção, seria ideal logar o erro
-    // error_log("Erro ao buscar produtos: " . $e->getMessage());
-    // Para o usuário, podemos mostrar uma mensagem amigável
-    $error_message = "Oops! Algo deu errado ao carregar os produtos. Tente novamente mais tarde.";
-}
+// Inclui o arquivo com a lógica para buscar os dados dos produtos
+require_once "model/products_data.php";
 ?>
  
 <!DOCTYPE html>
@@ -32,7 +22,8 @@ try {
     <title>Lista de Produtos - estocAI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dashboard.css"> <!-- Reutiliza estilos do header -->
+    <link rel="stylesheet" href="css/auth.css"> <!-- Estilos base para formulários e botões -->
+    <link rel="stylesheet" href="css/dashboard.css"> <!-- Reutiliza estilos do header e ajusta o layout da página -->
     <link rel="stylesheet" href="css/products.css"> <!-- Estilos específicos da página -->
     <link rel="stylesheet" href="css/responsive-table.css">
 </head>
@@ -53,6 +44,18 @@ try {
                 <a href="dashboard.php" class="btn btn-secondary">Voltar ao Dashboard</a>
             </div>
         </div>
+
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get" class="search-form">
+            <div class="search-input-group">
+                <input type="text" name="search" class="form-control" placeholder="Buscar por nome do produto..." value="<?php echo htmlspecialchars($search_term); ?>">
+                <button type="submit" class="btn btn-primary" aria-label="Buscar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+                </button>
+            </div>
+            <?php if(!empty($search_term)): ?>
+                <a href="products.php" class="btn btn-secondary">Limpar Busca</a>
+            <?php endif; ?>
+        </form>
 
         <?php 
         // Exibe a mensagem de sucesso, se houver
@@ -81,7 +84,11 @@ try {
             </div>
             <div class="product-grid-body">
                 <?php if (empty($produtos)): ?>
-                    <div class="empty-state">Nenhum produto cadastrado.</div>
+                    <?php if (!empty($search_term)): ?>
+                        <div class="empty-state">Nenhum produto encontrado para "<?php echo htmlspecialchars($search_term); ?>".</div>
+                    <?php else: ?>
+                        <div class="empty-state">Nenhum produto cadastrado.</div>
+                    <?php endif; ?>
                 <?php else: ?>
                     <?php foreach ($produtos as $produto): ?>
                         <div class="product-card <?php echo (isset($produto['quantidade_minima']) && $produto['quantidade'] <= $produto['quantidade_minima']) ? 'row-critical' : ''; ?>">

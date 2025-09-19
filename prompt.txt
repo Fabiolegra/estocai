@@ -37,3 +37,7 @@ Implemente a funcionalidade de exclusão de produtos
 8 - dashboard
 8.1 - 
 No dashboard, exiba no máximo 3 produtos recentes, utilizando o mesmo layout da página listaProdutos, mostrando todas as informações disponíveis de cada produto 
+
+9 - Busca de Produtos
+9.1 - 
+Adicione uma funcionalidade de pesquisa na página de listagem de produtos. O usuário deve poder buscar produtos pelo nome. 
