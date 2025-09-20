@@ -50,3 +50,4 @@ Crie um módulo de movimentação de estoque. Acesse a tabela 'movimentos' no ba
 crie uma landing page (index.php) com botao de login e cadastro de usuario para a pagina
 
 12 - 
+estilize os botões do site

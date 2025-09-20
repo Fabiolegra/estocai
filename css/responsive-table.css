@@ -32,6 +32,13 @@
     border-bottom: none;
 }
 
+/* Container for action buttons inside a card */
+.product-card .card-item.actions {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 0.5rem;
+}
+
 /* Use pseudo-element to show the label from data-label attribute */
 .product-card .card-item::before {
     content: attr(data-label);

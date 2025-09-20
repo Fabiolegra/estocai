@@ -8,7 +8,7 @@ html, body {
     font-family: 'Poppins', sans-serif;
 }
 
-body {
+.landing-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,34 +49,26 @@ body {
     gap: 1rem;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 50px; /* Pill shape */
-    transition: transform 0.2s, box-shadow 0.2s;
+/* Override unified button styles for the landing page */
+.landing-page .btn {
     width: 200px;
     max-width: 100%;
-    box-sizing: border-box;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.btn-primary {
+.landing-page .btn-primary {
     background-color: #fff;
     color: #007bff;
-    border: 2px solid #fff;
+    border-color: #fff;
+}
+.landing-page .btn-primary:hover {
+    background-color: #f0f0f0;
+    border-color: #f0f0f0;
 }
 
-.btn-secondary {
+.landing-page .btn-secondary {
     background-color: transparent;
     color: #fff;
-    border: 2px solid #fff;
+    border-color: #fff;
 }
 
 /* Responsive for larger screens */

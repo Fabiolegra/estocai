@@ -15,8 +15,9 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     <title>Bem-vindo ao estocAI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="css/auth.css"> <!-- Unified button styles -->
 </head>
-<body>
+<body class="landing-page">
     <div class="landing-container">
         <div class="landing-content">
             <h1 class="brand-title">estocAI</h1>

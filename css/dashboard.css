@@ -69,31 +69,25 @@ body {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
-.actions-container .btn {
-    margin: 0.5rem;
+
+.actions-container h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.actions-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
 
 /* Estilo para linha de produto com estoque crítico (usado no grid) */
 .row-critical {
     background-color: #f8d7da !important;
     color: #721c24;
-}
-
-.row-critical a {
-    color: #721c24;
-}
-
-.card-item.actions {
-    display: flex;
-    gap: 0.5rem;
-    white-space: nowrap;
-}
-
-.btn-sm {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
-    border-radius: 0.2rem;
 }
 
 /* Tabela de produtos recentes */

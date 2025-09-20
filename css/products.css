@@ -78,22 +78,6 @@
     color: #721c24;
 }
 
-.row-critical a {
-    color: #721c24;
-}
-
-.card-item.actions {
-    display: flex; /* This is inside a card-item now */
-    gap: 0.5rem;
-    white-space: nowrap;
-}
-
-.btn-sm {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
-    border-radius: 0.2rem;
-}
-
 .text-center {
     text-align: center;
 }

@@ -22,6 +22,7 @@ require_once "model/movements_data.php";
     <title>Histórico de Movimentações - estocAI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css"> <!-- Botões e estilos de formulário unificados -->
     <link rel="stylesheet" href="css/dashboard.css"> <!-- Reutiliza estilos do header e layout -->
     <link rel="stylesheet" href="css/responsive-table.css"> <!-- Reutiliza estilos da tabela responsiva -->
     <link rel="stylesheet" href="css/movements_page.css"> <!-- Estilos específicos -->
