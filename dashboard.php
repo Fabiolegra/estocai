@@ -21,6 +21,7 @@ require_once "model/dashboard_data.php";
     <title>Dashboard - estocAI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css"> <!-- Botões e estilos de formulário unificados -->
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/responsive-table.css">
 </head>
@@ -64,9 +65,11 @@ require_once "model/dashboard_data.php";
         </div>
         <div class="actions-container">
             <h2>Ações Rápidas</h2>
-            <a href="products.php" class="btn btn-secondary">Listar Produtos</a>
-            <a href="product_create.php" class="btn btn-primary">Cadastrar Novo Produto</a>
-            <a href="movements.php" class="btn btn-info">Ver Histórico de Movimentações</a>
+            <div class="actions-buttons">
+                <a href="products.php" class="btn btn-primary">Listar Produtos</a>
+                <a href="product_create.php" class="btn btn-primary">Cadastrar Novo Produto</a>
+                <a href="movements.php" class="btn btn-primary">Ver Histórico de Movimentações</a>
+            </div>
         </div>
         <div class="recent-products-container">
             <h2>Produtos Adicionados Recentemente</h2>
